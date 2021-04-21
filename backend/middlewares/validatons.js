@@ -26,7 +26,7 @@ const validateCreateUser = celebrate({
         'string.max': 'Максимальная длина поля "about" - 30',
       }),
     avatar: Joi.string().custom((value, helpers) => {
-      if (validator.isURL(value)) {
+      if (validator.isURL(value, { require_protocol: true })) {
         return value;
       }
       return helpers.message('Невалидная ссылка');
@@ -81,7 +81,7 @@ const validateEditProfile = celebrate({
 const validateEditAvatar = celebrate({
   body: Joi.object().keys({
     avatar: Joi.string().required().custom((value, helpers) => {
-      if (validator.isURL(value)) {
+      if (validator.isURL(value, { require_protocol: true })) {
         return value;
       }
       return helpers.message('Невалидная ссылка');
@@ -98,7 +98,7 @@ const validateCreateCard = celebrate({
         'any.required': 'Поле "name" должно быть заполнено',
       }),
     link: Joi.string().required().custom((value, helpers) => {
-      if (validator.isURL(value)) {
+      if (validator.isURL(value, { require_protocol: true })) {
         return value;
       }
       return helpers.message('Невалидная ссылка');

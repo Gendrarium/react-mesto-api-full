@@ -99,7 +99,7 @@ module.exports.login = (req, res, next) => {
       }).send({ user: user.toJSON() });
     })
     .catch((err) => {
-      if (err.name === 'ValidationError') {
+      if (err.name === 'ValidationError' || err.name === 'Error') {
         next(new UnauthorizedError(err.message));
       } else {
         next(err);
