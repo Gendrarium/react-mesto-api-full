@@ -1,0 +1,26 @@
+.auth {
+  padding: 20px;
+  max-width: 882px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media screen and (max-width: 1279px) {
+  .auth {
+    max-width: 75vw;
+  }
+ }
+
+@media screen and (max-width: 767px) {
+  .auth {
+    max-width: 70vw;
+    flex-direction: column;
+  }
+ }
+@media screen and (max-width: 599px) {
+  .auth {
+    padding: 1px;
+    max-width: 282px;
+  }
+ }

@@ -1,0 +1,11 @@
+.auth__button_disabled {
+    border: 1px solid #000000;
+    opacity: .2;
+    color: #000000;
+    background-color: #a8a8a8;
+  }
+  .auth__button_disabled:hover {
+    opacity: .2;
+    transition: none;
+  }
+  

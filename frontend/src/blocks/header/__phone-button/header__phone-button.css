@@ -1,0 +1,19 @@
+.header__phone-button {
+  display: none;
+  background-color: black;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  margin: 3px 39px 0 0;
+  width: 30px;
+  height: 30px;
+}
+.header__phone-button:focus{
+  outline: none;
+  }
+@media screen and (max-width: 599px) {
+  .header__phone-button {
+  display: block;
+  }
+ }

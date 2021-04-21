@@ -1,0 +1,22 @@
+.card__del {
+  background: url(../../../images/grid-cards-del.svg) center / cover no-repeat rgba(0, 0, 0, 0);
+  border: none;
+  width: 18px;
+  height: 20px;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.card__del:focus{
+outline: none;
+}
+
+.card__del:hover {
+opacity: .8;
+-webkit-transition: opacity .4s linear;
+-o-transition: opacity .4s linear;
+transition: opacity .4s linear;
+}

@@ -1,0 +1,36 @@
+.popup__close-button {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: url(../../../images/profile-plus-and-popup-x.svg);
+  background-position: center;
+  background-size: cover;
+  border: none;
+  position: absolute;
+  top: -45px;
+  right: -45px;
+  opacity: 1;
+  cursor: pointer;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.popup__close-button:focus {
+outline: none;
+}
+
+.popup__close-button:hover {
+opacity: .6;
+-webkit-transition: opacity .3s linear;
+-o-transition: opacity .3s linear;
+transition: opacity .3s linear;
+}
+@media screen and (max-width: 599px) {
+  .popup__close-button {
+    top: -35px;
+    right: -10px;
+    width: 26px;
+    height: 26px;
+  }
+}
