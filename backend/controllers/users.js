@@ -6,6 +6,8 @@ const NotFoundError = require('../errors/not-found-error');
 const ConflictingRequestError = require('../errors/conflicting-request-error');
 const User = require('../models/user');
 
+const { NODE_ENV, JWT_SECRET } = process.env;
+
 module.exports.getUsers = (req, res, next) => {
   User.find({})
     .then((users) => res.send(users))
@@ -88,7 +90,7 @@ module.exports.login = (req, res, next) => {
     .then((user) => {
       const token = jwt.sign(
         { _id: user._id },
-        'some-secret-key',
+        NODE_ENV === 'production' ? JWT_SECRET : 'dev-secret',
         { expiresIn: '7d' },
       );
       res.cookie('token', token, {
@@ -106,13 +108,12 @@ module.exports.login = (req, res, next) => {
 };
 
 module.exports.logout = (req, res, next) => {
-  if (!req.cookies.token) {
-    res.clearCookie('token').send();
+  if (req.cookies.token) {
+    res.clearCookie('token').send({ message: 'Выход успешно выполнен.' });
   } else {
     next(new BadRequestError('Некорректный запрос'));
   }
 };
-
 
 module.exports.editProfile = (req, res, next) => {
   const { name, about } = req.body;
