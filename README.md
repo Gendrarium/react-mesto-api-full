@@ -22,7 +22,4 @@ Frontend:
 
 **Ссылка на сайт**
 
-Публичный ip-адрес сервера: 178.154.234.105
-Доменное имя бэкенда: api.gendrarium.nomoredomains.monster
-
-[Нажмите сюда, чтобы посмотреть сайт.](https://gendrarium.nomoredomains.monster/)
+[Нажмите сюда, чтобы посмотреть сайт.](https://gendra-mesto-auth.herokuapp.com/)
