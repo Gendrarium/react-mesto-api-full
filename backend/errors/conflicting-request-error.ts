@@ -1,8 +1,10 @@
 class ConflictingRequestError extends Error {
-  constructor(message) {
+  statusCode: number;
+
+  constructor(message: string) {
     super(message);
     this.statusCode = 409;
   }
 }
 
-module.exports = ConflictingRequestError;
+export default ConflictingRequestError;
