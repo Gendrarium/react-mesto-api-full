@@ -1,0 +1,13 @@
+@import "../vendor/normalize.css";
+@import "../vendor/fonts/fonts.css";
+@import "./variables";
+@import "./mixins";
+
+//components
+@import "../components/App/App.scss";
+@import "../components/Header/Header.scss";
+@import "../components/AuthPage/AuthPage.scss";
+@import "../components/Main/Main.scss";
+@import "../components/Card/Card.scss";
+@import "../components/Footer/Footer.scss";
+@import "../components/Popups/Popup.scss";

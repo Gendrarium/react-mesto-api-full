@@ -1,0 +1,35 @@
+.page {
+  background-color: #000;
+  color: #fff;
+  font-family: "Inter", Arial, sans-serif;
+  min-height: 100vh;
+
+  &__header {
+    margin: 0 auto 40px;
+  }
+
+  &__footer {
+    margin: 0 auto;
+  }
+
+  &__popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+}
+
+.main {
+  &__no-margin {
+    margin: 0 auto;
+  }
+
+  &__grid-cards {
+    margin: 50px auto 0;
+
+    @include mq(599) {
+      margin-top: 36px;
+    }
+  }
+}

@@ -1,9 +1,0 @@
-.header__block_desktop {
-  display: flex;
-  flex-direction: row;
-}
-@media screen and (max-width: 599px) {
-  .header__block_desktop {
-  display: none;
-  }
- }

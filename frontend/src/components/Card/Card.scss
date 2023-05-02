@@ -1,0 +1,108 @@
+.card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  color: #000000;
+  max-width: 282px;
+  min-height: 362px;
+  box-sizing: border-box;
+  padding-bottom: 19px;
+  position: relative;
+
+  &__image-container {
+    width: 282px;
+    height: 282px;
+  }
+
+  &__image {
+    width: 282px;
+    height: 282px;
+    border-radius: 10px 10px 0px 0px;
+    cursor: pointer;
+  }
+
+  &__like-container {
+    display: flex;
+    flex-direction: column;
+    margin: 21px 21px 0 0;
+  }
+
+  &__like {
+    border: none;
+    width: 21px;
+    height: 19px;
+    margin-bottom: 5px;
+    opacity: 1;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.4s linear;
+    }
+  }
+
+  &__like-icon {
+    width: 21px;
+    height: 19px;
+  }
+
+  &__like-icon-fill {
+    fill: #000;
+  }
+
+  &__del {
+    border: none;
+    width: 18px;
+    height: 20px;
+    position: absolute;
+    top: 18px;
+    right: 15px;
+    opacity: 1;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.4s linear;
+    }
+  }
+
+  &__del-icon {
+    width: 18px;
+    height: 20px;
+  }
+
+  &__del-icon-fill {
+    fill: white;
+  }
+
+  &__bottom-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    margin: 18px 0 0 21px;
+    max-width: 190px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+
+  &__like-num {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 16px;
+    text-align: center;
+    color: #000000;
+  }
+}

@@ -1,0 +1,25 @@
+.footer {
+  padding: 66px 0 55px;
+  max-width: 882px;
+
+  @include mq(1023) {
+    max-width: 75vw;
+  }
+
+  @include mq(599) {
+    max-width: 282px;
+    padding: 49px 0 32px;
+  }
+
+  &__copyright {
+    margin: 0;
+    color: #545454;
+    font-size: 18px;
+    line-height: 22px;
+
+    @include mq(599) {
+      font-size: 14px;
+      line-height: 17px;
+    }
+  }
+}

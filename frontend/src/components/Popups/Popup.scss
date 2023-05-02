@@ -1,0 +1,215 @@
+.popup {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.5s, opacity 0.5s linear;
+
+  &_display-flex {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff;
+    border-radius: 10px;
+    min-width: 430px;
+    padding-bottom: 33px;
+
+    @include mq(599) {
+      min-width: 282px;
+      padding-bottom: 40px;
+    }
+
+    &_img-popup {
+      max-width: 75vw;
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+
+  &__close-button {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -45px;
+    right: -45px;
+    opacity: 1;
+    cursor: pointer;
+    transform: rotate(-45deg);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 0.6;
+      transition: opacity 0.3s linear;
+    }
+
+    @include mq(599) {
+      top: -35px;
+      right: -10px;
+      width: 26px;
+      height: 26px;
+    }
+  }
+
+  &__close-icon {
+    width: 100%;
+    height: 100%;
+  }
+
+  &__close-icon-fill {
+    fill: white;
+  }
+
+  &__title {
+    margin: 34px 0 54px 0px;
+    max-width: 358px;
+    text-align: center;
+    font-weight: 900;
+    font-family: "Inter", Arial, sans-serif;
+    color: #000000;
+    font-size: 24px;
+    line-height: 29px;
+
+    @include mq(599) {
+      font-size: 18px;
+      line-height: 22px;
+      max-width: 244px;
+    }
+
+    &_delete-card {
+      margin-bottom: 18px;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__button {
+    padding: 0;
+    width: 358px;
+    height: 50px;
+    margin: 18px auto 0;
+    background-color: #000;
+    font-family: "Inter", Arial, sans-serif;
+    border-color: black;
+    border-radius: 2px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    color: #ffffff;
+    opacity: 1;
+    cursor: pointer;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:hover {
+      opacity: 0.8;
+      transition: opacity 0.4s linear;
+    }
+
+    @include mq(599) {
+      width: 238px;
+      height: 46px;
+    }
+
+    &_disabled {
+      border: 1px solid #000000;
+      opacity: 0.2;
+      color: #000000;
+      background-color: #ffffff;
+
+      &:hover {
+        opacity: 0.2;
+        transition: none;
+      }
+    }
+  }
+
+  &__figure {
+    margin: 0;
+  }
+
+  &__image {
+    max-width: 75vw;
+    max-height: 75vh;
+  }
+
+  &__caption {
+    font-size: 12px;
+    line-height: 15px;
+    margin: 10px 0 0;
+  }
+
+  &__input {
+    padding: 0;
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 400;
+    width: 358px;
+    margin: 0 auto;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:last-of-type {
+      margin-top: 10px;
+    }
+
+    @include mq(599) {
+      width: 238px;
+    }
+
+    &_type {
+      &_error {
+        border-bottom: 1px solid $red;
+      }
+    }
+  }
+
+  &__error {
+    display: block;
+    color: $red;
+    font-size: 12px;
+    line-height: 15px;
+    margin-top: 5px;
+    max-width: 358px;
+    min-height: 30px;
+
+    @include mq(599) {
+      max-width: 238px;
+    }
+  }
+
+  &__icon {
+    width: 120px;
+    height: 120px;
+    margin: 60px 0 0 0;
+  }
+
+  &__icon-fill {
+    fill: #000000;
+
+    &_error {
+      fill: $red;
+    }
+  }
+}
