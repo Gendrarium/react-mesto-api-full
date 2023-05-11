@@ -5,6 +5,7 @@ import AuthPage from "../AuthPage/AuthPage";
 import { handleLogin } from "@redux/user/actions";
 import { useAppDispatch, useAppSelector } from "@redux/store";
 import { selectLoggedIn } from "@redux/user/selectors";
+import { setTitle } from "@redux/page/actions";
 
 interface LoginProps {
   openNotice: (i: boolean) => void;
@@ -81,6 +82,10 @@ const Login: React.FC<LoginProps> = memo(({ openNotice }) => {
       navigate("/");
     }
   }, [navigate, loggedIn]);
+
+  useEffect(() => {
+    dispatch(setTitle('Вход'))
+  }, [dispatch]);
 
   return (
     <AuthPage

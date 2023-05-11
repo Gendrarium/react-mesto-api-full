@@ -3,6 +3,8 @@ import AuthPage from "../AuthPage/AuthPage";
 import { useNavigate } from "react-router-dom";
 import { register } from "@utils/auth";
 import { Link } from "react-router-dom";
+import { setTitle } from "@redux/page/actions";
+import { useAppDispatch } from "@redux/store";
 
 interface RegisterProps {
   openNotice: (i: boolean) => void;
@@ -17,6 +19,7 @@ const Register: React.FC<RegisterProps> = memo(({ openNotice }) => {
   });
   const [isButtonDisabled, setIsButtonDisabled] = useState(true);
   const navigate = useNavigate();
+  const dispatch = useAppDispatch();
 
   const handleEmailChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -64,6 +67,10 @@ const Register: React.FC<RegisterProps> = memo(({ openNotice }) => {
         : setIsButtonDisabled(true)
       : setIsButtonDisabled(true);
   }, [errors, email, password]);
+
+  useEffect(() => {
+    dispatch(setTitle("Регистрация"));
+  }, [dispatch]);
 
   return (
     <AuthPage

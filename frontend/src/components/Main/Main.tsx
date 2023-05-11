@@ -12,6 +12,7 @@ import {
   reverseIsEditAvatarOpen,
   reverseIsEditProfileOpen,
   setCards,
+  setTitle,
 } from "@redux/page/actions";
 import api from "@utils/api";
 import ProfileEditIcon from "@icons/ProfileEditIcon";
@@ -85,6 +86,10 @@ const Main: React.FC = () => {
         });
     }
   }, [loggedIn, dispatch]);
+
+  useEffect(() => {
+    dispatch(setTitle("Главная"));
+  }, [dispatch]);
 
   return (
     <>
