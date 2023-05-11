@@ -194,6 +194,7 @@
       background-size: 16px 16px;
       flex-direction: column;
       margin-top: 28px;
+      margin-left: 0;
     }
 
     @include mq(599) {

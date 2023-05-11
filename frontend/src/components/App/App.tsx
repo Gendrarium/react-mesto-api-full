@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
+import { Routes, Route, useNavigate } from "react-router-dom";
 
 import Header from "../Header/Header";
 import Main from "../Main/Main";
@@ -30,7 +30,6 @@ function App() {
   const currentUser = useAppSelector(selectCurrentUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const location = useLocation();
 
   const handleInfoTooltip = useCallback(
     (isOkey: boolean) => {
@@ -56,10 +55,6 @@ function App() {
   useEffect(() => {
     dispatch(checkToken());
   }, [dispatch]);
-
-  useEffect(() => {
-    console.log(location.pathname);
-  }, [location.pathname, navigate]);
 
   const handleUpdateUser = useCallback(
     (data: { name: string; about: string }) => {

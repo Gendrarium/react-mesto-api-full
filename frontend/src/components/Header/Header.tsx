@@ -4,7 +4,11 @@ import HeaderBurgerIcon from "@icons/HeaderBurgerIcon";
 import HeaderCloseIcon from "@icons/HeaderCloseIcon";
 import LogoIcon from "@icons/LogoIcon";
 import { useAppSelector } from "@redux/store";
-import { selectCurrentUser, selectLoggedIn } from "@redux/user/selectors";
+import {
+  selectAuthChecking,
+  selectCurrentUser,
+  selectLoggedIn,
+} from "@redux/user/selectors";
 
 interface HeaderProps {
   handleLogout: () => void;
@@ -12,6 +16,7 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = memo(({ handleLogout }) => {
   const loggedIn = useAppSelector(selectLoggedIn);
+  const authChecking = useAppSelector(selectAuthChecking);
   const location = useLocation();
   const { email } = useAppSelector(selectCurrentUser);
   const [isOpenInfo, setIsOpenInfo] = useState(false);
@@ -60,14 +65,18 @@ const Header: React.FC<HeaderProps> = memo(({ handleLogout }) => {
               )}
             </button>
           </>
-        ) : location.pathname === "/sign-up" ? (
-          <Link className="header__link" to="/sign-in">
-            Войти
-          </Link>
+        ) : !authChecking ? (
+          location.pathname === "/sign-up" ? (
+            <Link className="header__link" to="/sign-in">
+              Войти
+            </Link>
+          ) : (
+            <Link className="header__link" to="/sign-up">
+              Регистрация
+            </Link>
+          )
         ) : (
-          <Link className="header__link" to="/sign-up">
-            Регистрация
-          </Link>
+          <></>
         )}
       </div>
     </header>

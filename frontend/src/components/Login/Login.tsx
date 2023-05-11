@@ -53,7 +53,7 @@ const Login: React.FC<LoginProps> = memo(({ openNotice }) => {
           if (!data.message) {
             setEmail("");
             setPassword("");
-            dispatch(handleLogin(data));
+            dispatch(handleLogin(data.user));
             navigate("/");
           } else {
             throw new Error("Неверный логин или пароль!");

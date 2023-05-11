@@ -1,14 +1,15 @@
 .header {
-  max-width: 882px;
+  min-width: 882px;
   border-bottom: 1px solid rgba(84, 84, 84, 0.7);
   padding: 45px 0 39px;
 
   @include mq(1279) {
-    max-width: 75vw;
+    min-width: 75vw;
   }
 
   @include mq(599) {
-    max-width: 320px;
+    min-width: 0;
+    width: 100%;
     padding: 28px 0;
   }
 

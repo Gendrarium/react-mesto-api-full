@@ -3,6 +3,8 @@
   color: #fff;
   font-family: "Inter", Arial, sans-serif;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   &__header {
     margin: 0 auto 40px;
@@ -21,6 +23,8 @@
 }
 
 .main {
+  flex: 1 1 auto;
+
   &__no-margin {
     margin: 0 auto;
   }
